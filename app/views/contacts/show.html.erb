@@ -1,7 +1,13 @@
 <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
 
-<h3>Email:</h3>
-<p><%= @contact.email %></p>
+Email:<p><%= @contact.email %></p>
 
-<h3>Phone Number</h3>
-<p><%= @contact.phone_number %></p>
+Phone Number:<p><%= @contact.phone_number %></p>
+
+<a class="btn btn-outline-primary" href="/contacts/<%= @contact.id %>/edit">EDIT</a>
+
+<%= form_tag "/contacts/#{@contact.id}", method: :delete do %>
+  <input type="submit" class="btn btn-outline-danger" value="DELETE CONTACT">
+<% end %>
+
+<a class="btn btn-outline-primary" href="/contacts">BACK TO ALL CONTACTS</a>

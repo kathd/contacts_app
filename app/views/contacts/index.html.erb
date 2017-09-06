@@ -1,9 +1,15 @@
 <h1>Contacts:</h1>
-<br>
+<a class="btn btn-outline-primary" href="/contacts/new">ADD CONTACT</a>
+<br><br>
 
 <% @contact.each do |contact| %>
-<h2><a href="contacts/<%contact.id%>"><%= contact.first_name %> <%= contact.last_name %></a></h2>
-<h4><%= contact.email %></h4>
-<h4><%= contact.phone_number %></h4>
-<!-- insert delete form here -->
+  <div>
+  <h2><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></h2>
+  <h4><%= contact.email %></h4>
+  <h4><%= contact.phone_number %></h4>
+  <%= form_tag "/contacts/#{contact.id}", method: :delete do %>
+    <input type="submit" class="btn btn-outline-danger" value="DELETE CONTACT">
+  <% end %>
+  </div>
+  <br>
 <% end %>
