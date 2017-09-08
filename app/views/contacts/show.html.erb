@@ -1,9 +1,12 @@
-<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<h1><%= @contact.full_name %></h1>
 
 Email:<p><%= @contact.email %></p>
 
-Phone Number:<p><%= @contact.phone_number %></p>
+Phone Number:<p><%= @contact.japan_phone_number %></p>
 
+Contact updated at <%= @contact.friendly_updated_at %>
+<br>
+<br>
 <a class="btn btn-outline-primary" href="/contacts/<%= @contact.id %>/edit">EDIT</a>
 
 <%= form_tag "/contacts/#{@contact.id}", method: :delete do %>

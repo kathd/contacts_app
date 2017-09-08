@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   delete "/contacts/:id" => "contacts#destroy"
 
+  get "/contacts/all_johns" => "contacts#all_johns"
+
 end
